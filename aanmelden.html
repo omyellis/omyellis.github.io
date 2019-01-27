@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Roboto" rel="stylesheet">
+    <title>Aanmelden/inloggen</title>
+</head>
+
+<body>
+
+<header>
+   <section>
+    <a href="index.html"><img class="profielfoto" src="img/profielfoto.png" alt="profielfoto"/></a>
+    <h1>Videoportfolio van Ellis Kopier</h1>
+   </section>
+   <section>
+       <img class="icons" id= "zoek" src="img/searchicon.png" alt="zoekicon">
+    <form>
+        <fieldset>
+            <input type="text" id="zoeken" placeholder="zoeken">
+        </fieldset>
+    </form>
+
+    <a href="aanmelden.html">
+        <img class="icons" id="account" src="img/usericon.png" alt="account">
+    </a>
+   </section>
+</header>
+
+<!-- Aanmelden -->
+<main id="aanmeldpagina">
+<form action="aanmelden.html">
+    <fieldset class="formulier">
+        <h4>Aanmelden</h4>
+        <label for="username">Username</label>
+        <input id="username" type="username" name="username" placeholder="username" required>
+
+        <label for="psword-login">Wachtwoord</label>
+        <input id="password-login" type="password" name="password" required>
+
+        <button class="button" type="submit">Inloggen</button>
+    </fieldset>
+</form>
+
+<!-- Registreren -->
+
+<form action="aanmelden.html">
+    <fieldset class="formulier">
+        <h4>Registreren</h4>
+        <label for="username">Username</label>
+        <input id="username" type="username" name="username" placeholder="example" required>
+
+        <label for="email">E-mail</label>
+        <input id="email" type="email" name="email" placeholder="gebruiker@domein.nl" required>
+
+        <label for="psword-login">Wachtwoord</label>
+        <input id="password-login" type="password" name="password" required>
+
+        <button class="button" type="submit">Registreren</button>
+    </fieldset>
+</form>
+</main>
+
+<footer>
+    <p>&copy; Ellis, 2019.</p>
+</footer>
+
+</body>
+<script type="text/javascript" src="main.js"></script>
+</html>
