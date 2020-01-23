@@ -94,7 +94,7 @@ header > h1 {
 
 main h1 {
     text-align: center;
-		margin-top: 2em;
+        margin-top: 2em;
 }
 
 #filter {
@@ -105,7 +105,10 @@ main h1 {
 
 h5 {
     text-align: center;
+}
 
+input:focus {
+    outline: none;
 }
 
 #filter fieldset  {
@@ -122,7 +125,7 @@ h5 {
     padding: .3em;
     margin-right: -4px;
     height: 100%;
-		background-color: #0299d2;
+        background-color: #0299d2;
 }
 
 #filter button {
@@ -204,7 +207,7 @@ h3 {
 .tekstpost {
     padding: 0 .7em;
     color: #4a4a4a;
-		height: 3em;
+        height: 3em;
 }
 
 .kijkbutton {
@@ -241,12 +244,12 @@ iframe {
 .interactiebuttons {
     display: flex;
     flex-flow: row;
-		margin-left: .6em;
+        margin-left: .6em;
 }
 
 .interactiebuttons img {
     width: 50px;
-		height: 50px;
+        height: 50px;
 }
 
 .sectiondetail {
@@ -254,7 +257,7 @@ iframe {
     display: flex;
     flex-flow: column;
     justify-content: center;
-		margin-bottom: 2em;
+        margin-bottom: 2em;
 }
 
 .sectiondetail < article {
@@ -290,11 +293,24 @@ form {
     display: flex;
     justify-content: center;
     flex-direction: row;
+    transition: .2s;
+}
+
+form:focus-within {
+    transform: scale(1.1);
+}
+
+input:focus {
+    border: 2px solid #0299d2;
+}
+
+input:valid {
+    border: 2px solid lightgreen;
 }
 
 .formulier {
     display: flex;
-		flex-flow: column;
+        flex-flow: column;
     justify-content: center;
     background: white;
     padding: 2em 2.2em;
@@ -310,6 +326,16 @@ form {
     padding: .5em;
     margin: .7em 0;
     color: white;
+    transition: background .2s;
+}
+
+.formulier .button:hover {
+    background-color: #0078a6;
+}
+
+.formulier .button:active {
+    border: 2px solid #4a4a4a;
+
 }
 
 .formulier h4 {
@@ -328,6 +354,64 @@ footer {
     margin: 4em 0em 0em 0em;
 }
 
+.liked {
+    animation: like .4s ease
+}
+
+@keyframes like {
+    60% {
+    transform: scale(1.2)
+    }
+    100% {
+    transform: scale(1)
+    }
+}
+
+.shared {
+    animation: share .4s ease-in
+}
+
+@keyframes share {
+    100% {
+    transform: rotate(360deg)
+    }
+}
+
+.popup {
+    display: none;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 52%;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.9);
+    transform: translate(-50%,-50%);
+    z-index: 100;
+    -webkit-box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.5);
+    transition: .6s;
+}
+
+.popupshow {
+    display: block;
+}
+
+.popup input {
+    line-height: 6em;
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.popup .button {
+    display: block;
+    border: none;
+    background-color: #0299d2;
+    padding: .5em 2em;
+    margin: 0 auto;
+    color: white;
+}
+
 /* ipad */
 
 @media (min-width: 52em) {
@@ -336,54 +420,57 @@ footer {
     flex-flow: row;
     }
 
-	.post {
-		flex-flow: row wrap;
-		justify-content: space-evenly;
-		box-sizing: border-box;
-		align-items: stretch;
-	}
+    .post {
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        box-sizing: border-box;
+        align-items: stretch;
+    }
 
-	article {
-		background-color: white;
-		max-width: 400px;
-		flex: 0 0 50%;
-		padding-bottom: 2.5em;
-		border-radius: 10px;
-		height: 100%;
-	}
+    article {
+        background-color: white;
+        max-width: 400px;
+        flex: 0 0 50%;
+        padding-bottom: 2.5em;
+        border-radius: 10px;
+        height: 100%;
+    }
 
 /* groter */
 @media (min-width:64em) {
 
     header {
     flex-flow: row;
-	}
+    }
 
     header > section {
     display: flex;
     align-items: center;
-	}
+    }
 
     header > h1 {
     display: inline;
-	}
+    }
 
-		.sectiondetail < article {
+        .sectiondetail < article {
     display: block;
     max-width: 560px;
     width: 100%
-	}
-		article {
-			flex: 0 1 33%;
-		}
+    }
+        article {
+            flex: 0 1 33%;
+        }
 
-		.post {
-			max-width: 64em;
-			margin: auto;
-			justify-content: space-between;
-		}
+        .post {
+            max-width: 64em;
+            margin: auto;
+            justify-content: space-between;
+        }
 
 }
 
 
-/* Gebruikte icons komen van flaticon */
+/* Gebruikte icons komen van flaticon
+& gebruikt gemaakt van https://www.cssmatic.com/box-shadow */
+
+
